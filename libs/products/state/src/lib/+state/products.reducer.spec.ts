@@ -1,15 +1,11 @@
 import { Action } from '@ngrx/store';
 
-import * as ProductsActions from './products.actions';
-import { ProductsEntity } from './products.models';
-import {
-  ProductsState,
-  initialProductsState,
-  productsReducer,
-} from './products.reducer';
+import { fetchProductsSuccess } from './products.actions';
+import { initialProductsState, productsReducer } from './products.reducer';
+import { Product } from '../models/product';
 
 describe('Products Reducer', () => {
-  const createProductsEntity = (id: string, name = ''): ProductsEntity => ({
+  const createProductsEntity = (id: string, name = ''): Product => ({
     id,
     name: name || `name-${id}`,
   });
@@ -20,25 +16,24 @@ describe('Products Reducer', () => {
         createProductsEntity('PRODUCT-AAA'),
         createProductsEntity('PRODUCT-zzz'),
       ];
-      const action = ProductsActions.loadProductsSuccess({ products });
 
-      const result: ProductsState = productsReducer(
+      const state = productsReducer(
         initialProductsState,
-        action
+        fetchProductsSuccess({ products })
       );
 
-      expect(result.loaded).toBe(true);
-      expect(result.ids.length).toBe(2);
+      expect(state.ids).toStrictEqual(products.map(({ id }) => id));
+      expect(state.entities).toStrictEqual(
+        Object.fromEntries(products.map((product) => [product.id, product]))
+      );
     });
   });
 
   describe('unknown action', () => {
     it('should return the previous state', () => {
-      const action = {} as Action;
-
-      const result = productsReducer(initialProductsState, action);
-
-      expect(result).toBe(initialProductsState);
+      expect(productsReducer(initialProductsState, <Action>{})).toBe(
+        initialProductsState
+      );
     });
   });
 });

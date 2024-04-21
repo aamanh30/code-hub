@@ -36,11 +36,11 @@ describe('Products Selectors', () => {
 
   describe('products', () => {
     it('should return the list of products', () => {
-      expect(productsSelector(state)).toBe(products);
+      expect(productsSelector(state)).toStrictEqual(products);
     });
 
     it('should return empty when no products exist in the state', () => {
-      expect(productsSelector(emptyState)).toBe([]);
+      expect(productsSelector(emptyState)).toStrictEqual([]);
     });
   });
 });
