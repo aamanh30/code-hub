@@ -1,0 +1,3 @@
+<p *ngIf="{ loading: loading$ | async } as ctx">
+  {{ ctx.loading ? 'loading...' : 'main works!' }}
+</p>
