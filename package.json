@@ -2,7 +2,9 @@
   "name": "@code-hub/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve:shopping-hub": "npx nx serve --project=shopping-hub"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.3.0",
