@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-navbar',
-  standalone: true,
-  imports: [CommonModule],
+  selector: 'code-hub-shared-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })

@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-header',
-  standalone: true,
-  imports: [CommonModule],
+  selector: 'code-hub-shared-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
