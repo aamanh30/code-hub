@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@code-hub/error/ui": ["libs/error/ui/src/index.ts"],
+      "@code-hub/products/state": ["libs/products/state/src/index.ts"],
       "@code-hub/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
