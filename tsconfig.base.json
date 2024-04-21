@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@code-hub/error/ui": ["libs/error/ui/src/index.ts"]
+      "@code-hub/error/ui": ["libs/error/ui/src/index.ts"],
+      "@code-hub/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
