@@ -21,6 +21,7 @@
       "@code-hub/products/state": ["libs/products/state/src/index.ts"],
       "@code-hub/products/ui": ["libs/products/ui/src/index.ts"],
       "@code-hub/progress/state": ["libs/progress/state/src/index.ts"],
+      "@code-hub/shared/state": ["libs/shared/state/src/index.ts"],
       "@code-hub/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
