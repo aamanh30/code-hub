@@ -6,7 +6,7 @@ import {
   fetchProductsError,
   fetchProductsSuccess,
 } from './products.actions';
-import { ProgressType } from '@code-hub/progress/state';
+import { ProgressType } from '@code-hub/shared/state';
 
 @Injectable()
 export class ProductsEffects {

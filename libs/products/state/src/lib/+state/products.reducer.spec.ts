@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
-import { fetchProductsSuccess } from './products.actions';
+import { fetchProducts, fetchProductsSuccess } from './products.actions';
 import { initialProductsState, productsReducer } from './products.reducer';
-import { Product } from '@code-hub/shared/state';
+import { Product, ProgressType } from '@code-hub/shared/state';
 
 describe('Products Reducer', () => {
   const createProductsEntity = (id: string, name = ''): Product => ({
@@ -19,7 +19,11 @@ describe('Products Reducer', () => {
 
       const state = productsReducer(
         initialProductsState,
-        fetchProductsSuccess({ products })
+        fetchProductsSuccess({
+          products,
+          progressType: ProgressType.stop,
+          triggerAction: fetchProducts.type,
+        })
       );
 
       expect(state.ids).toStrictEqual(products.map(({ id }) => id));

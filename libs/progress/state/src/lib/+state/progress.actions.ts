@@ -1,7 +1,6 @@
 import { createActionGroup, props } from '@ngrx/store';
-import { StartProgress } from '../models/start-progress';
-import { StopProgress } from '../models/stop-progress';
 import { PROGRESS_FEATURE_KEY } from './progress-key';
+import { StartProgress, StopProgress } from '@code-hub/shared/state';
 
 export const { startProgress, stopProgress } = createActionGroup({
   source: PROGRESS_FEATURE_KEY,

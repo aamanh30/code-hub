@@ -1,19 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import {
-  Action,
-  createAction,
-  createActionGroup,
-  emptyProps,
-  props,
-} from '@ngrx/store';
+import { Action, createActionGroup, emptyProps, props } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
-import { EMPTY, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { hot } from 'jasmine-marbles';
 
 import { startProgress, stopProgress } from './progress.actions';
 import { ProgressEffects } from './progress.effects';
-import { ProgressType } from '../models/progress-type';
+import { ProgressType } from '@code-hub/shared/state';
 
 describe('ProgressEffects', () => {
   const testActions = createActionGroup({

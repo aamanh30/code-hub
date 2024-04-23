@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { createEffect, Actions } from '@ngrx/effects';
 import { filter, map } from 'rxjs';
 import { startProgress, stopProgress } from './progress.actions';
-import { ProgressType } from '../models/progress-type';
+import { ProgressType } from '@code-hub/shared/state';
 
 @Injectable()
 export class ProgressEffects {

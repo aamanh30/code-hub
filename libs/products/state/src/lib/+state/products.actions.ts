@@ -1,9 +1,9 @@
 import { createActionGroup, props } from '@ngrx/store';
 import {
+  Product,
   StartProgressDecorators,
   StopProgressDecorators,
-} from '@code-hub/progress/state';
-import { Product } from '@code-hub/shared/state';
+} from '@code-hub/shared/state';
 
 import { PRODUCTS_FEATURE_KEY } from './products-key';
 

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 
 import { fetchProducts, fetchProductsSuccess } from './products.actions';
 import { ProductsEffects } from './products.effects';
+import { ProgressType } from '@code-hub/shared/state';
 
 describe('ProductsEffects', () => {
   let actions: Observable<Action>;
@@ -27,11 +28,17 @@ describe('ProductsEffects', () => {
 
   describe('fetchProducts$', () => {
     it('should dispatch fetch products success action', () => {
-      actions = hot('-a|', { a: fetchProducts() });
+      actions = hot('-a|', {
+        a: fetchProducts({ progressType: ProgressType.start }),
+      });
 
       expect(effects.fetchProducts$).toBeObservable(
         hot('-a|', {
-          a: fetchProductsSuccess({ products: [] }),
+          a: fetchProductsSuccess({
+            products: [],
+            progressType: ProgressType.stop,
+            triggerAction: fetchProducts.type,
+          }),
         })
       );
     });

@@ -4,12 +4,8 @@ import {
   ProductsFeature,
   ProductsSelectors,
 } from '@code-hub/products/state';
-import {
-  ProgressFeature,
-  ProgressSelectors,
-  ProgressType,
-} from '@code-hub/progress/state';
-import { Product } from '@code-hub/shared/state';
+import { ProgressFeature, ProgressSelectors } from '@code-hub/progress/state';
+import { Product, ProgressType } from '@code-hub/shared/state';
 import { Store } from '@ngrx/store';
 import { EMPTY, Observable } from 'rxjs';
 
