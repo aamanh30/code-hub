@@ -3,9 +3,9 @@ import {
   StartProgressDecorators,
   StopProgressDecorators,
 } from '@code-hub/progress/state';
+import { Product } from '@code-hub/shared/state';
 
 import { PRODUCTS_FEATURE_KEY } from './products-key';
-import { Product } from '../models/product';
 
 export const { fetchProducts, fetchProductsError, fetchProductsSuccess } =
   createActionGroup({

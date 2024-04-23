@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  Product,
   ProductsActions,
   ProductsFeature,
   ProductsSelectors,
@@ -10,6 +9,7 @@ import {
   ProgressSelectors,
   ProgressType,
 } from '@code-hub/progress/state';
+import { Product } from '@code-hub/shared/state';
 import { Store } from '@ngrx/store';
 import { EMPTY, Observable } from 'rxjs';
 

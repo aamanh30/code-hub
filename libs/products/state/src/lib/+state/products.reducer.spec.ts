@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 import { fetchProductsSuccess } from './products.actions';
 import { initialProductsState, productsReducer } from './products.reducer';
-import { Product } from '../models/product';
+import { Product } from '@code-hub/shared/state';
 
 describe('Products Reducer', () => {
   const createProductsEntity = (id: string, name = ''): Product => ({

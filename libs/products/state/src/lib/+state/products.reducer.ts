@@ -2,8 +2,8 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
 import { fetchProducts, fetchProductsSuccess } from './products.actions';
-import { Product } from '../models/product';
 import { PRODUCTS_FEATURE_KEY } from './products-key';
+import { Product } from '@code-hub/shared/state';
 
 export type ProductsState = EntityState<Product> & {
   selectedId: string | undefined; // which Products record has been selected
